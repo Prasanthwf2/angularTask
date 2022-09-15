@@ -1,0 +1,58 @@
+ <div class="col-sm-12 cointiner">
+    <div class="card">
+      <div class="card-header">
+        <h4 class=" header-title mt-0">Reviewers List </h4>
+      </div>
+        <div class="card-body">
+            <div class="form-group row">
+         <form [formGroup]="moviesForm" (ngSubmit)="onSubmit()">
+            <div class="col-sm-6">
+                <div class="form-group col-sm-8">
+                    <label>Movie Reviewers</label><label style="color: red;">*</label>
+                    <select class="form-control" formControlName="movieReviewers">
+                    <option value="">Select The List</option>
+                    <option value="all">All</option>
+                    <option value="full-time">Full Time</option>
+                    <option value="part-time">Part Time</option>
+                    </select>
+            </div>
+        </div><br>
+        <div class="col-sm-6">
+            <div class="form-group col-sm-8">
+                <div style="text-align: center;">
+               
+                <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;
+            </div>
+            </div>
+          </div>
+      
+         </form>
+        </div>
+    
+      
+
+  <div class="table-responsive" *ngIf="data">
+    <table class="table table-striped mb-0">
+      <thead style="background-color:#2cc0a2;">
+        <tr>
+          <th>Display Name</th>
+          <th>SEO Name</th>
+          <th>SORT Name</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+       <tr *ngFor="let item of data">
+        <td>{{item.display_name}}</td>
+        <td>{{item.seo_name}}</td>
+        <td>{{item.sort_name}}</td>
+        <td>{{item.status}}</td>
+       </tr> 
+    </tbody>
+    </table>
+  </div>
+
+</div>
+</div>
+     
+</div>
